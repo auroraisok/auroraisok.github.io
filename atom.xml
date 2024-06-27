@@ -6,7 +6,7 @@
   <link href="https://auroraisok.online/atom.xml" rel="self"/>
   
   <link href="https://auroraisok.online/"/>
-  <updated>2024-06-27T13:15:26.383Z</updated>
+  <updated>2024-06-27T13:30:15.073Z</updated>
   <id>https://auroraisok.online/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【个人学习笔记】《ambitious mission FD1》汉化程序记录</title>
+    <link href="https://auroraisok.online/posts/45a25b6e.html"/>
+    <id>https://auroraisok.online/posts/45a25b6e.html</id>
+    <published>2024-06-27T13:07:22.000Z</published>
+    <updated>2024-06-27T13:30:15.073Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>写于2023.11.14，针对krkr引擎的简单破解工作</p><h2><font color=red>本记录只是针对于汉化程序的学习，是一名新人的学习记录（大佬勿喷）。私自拆包游戏用于商业用途、或者传播可能涉及违法行为，如有相关责任请自负，与本站无关。</font></h2><p>这几天忙着建设新网站（10块钱的主机差评）和部署机器人，以及研究汉化程序和web前端开发。前段阵子把《ambitious mission》通关了，想要立即去玩续作，结果却发现没有汉化。于是自己制作了GPT机翻补丁，现记录一下过程。<br>程序学习参考了<a href="https://www.bilibili.com/read/cv21304747/">https://www.bilibili.com/read/cv21304747/</a></p><p>#浏览游戏目录</p><p>首先下载游戏，发现里边一堆xp3文件，应该是与krkr引擎脱不了关系了。有个文件吸引了我：<b><font color=red>scn.xp3</font></b>,再看大小只有十几MB，里边应该是脚本和游戏文本之类的了。于是开始解包scn.xp3文件</p><p>#解包</p><p>因为是比较新的游戏，猜测用的krkrz引擎，但不确定。先尝试用krkrextract和xp3dumper_gui,均不可以。于是用<b>krkrdumper</b>解包，解了出来。我又参考文章<a href="https://blog.ztjal.info/acg" title="https://blog.ztjal.info/acg">https://blog.ztjal.info/acg</a> 发现大佬也是用krkrdumper解包的。xp3封包解包完毕。</p><p>##继续解包scn文件，GPT翻译后封包<br>浏览解包出来的文件，非常清晰明了的，那几个scn文件一看就是游戏文本文件，但是直接打是打不开的。<br>于是我翻了翻我电脑上的工具，首先是freemote,但我解出来的东西，一个scn文件解包出来两个东西…而且我的技术使我无法封装，放弃使用freemote</p><p>于是拿出另一款工具：VNTextPatch。（值得一提的是，这个工具用cmd操作起来比较麻烦，可以参考这个链接，有大佬弄出来个图形化操作界面，更方便<a href="https://github.com/XD2333/GalTransl">https://github.com/XD2333/GalTransl</a>）  但这里我是用的cmd，</p><p>打开VNTextPatch的目录，powershell运行，输入：VNTextPatch extractlocal 包含有scn文件的文件夹路径 接收json文件路径，回车（如果输入上边的内容不能执行，输入这个：<br>.\VNTextPatch extractlocal 包含有scn文件的文件夹路径 接收json文件路径）这样解包出来一堆json文件。</p><p>一般的话，因为这个文件还有一堆代码什么的，汉化组可能会把json文件里的日语提取出来给翻译人员（当然你也可以直接改）。但这里我用的是机翻，用Galtransl进行机器翻译，</p><p>翻译完后进行封包：输入：VNTextPatch insertlocal 原始scn文件的文件夹路径 包含json文件的文件夹路径 接收新的scn文件的文件夹路径，回车 （如果输入上边的内容不能执行，输入这个：<br>.\VNTextPatch insertlocal 原始scn文件的文件夹路径 包含json文件的文件夹路径 接收新的scn文件的文件夹路径）这样scn文件就封好了</p><p>#最后的封包<br>因为我只是自己玩，UI汉化、修图都没做，于是就可以直接封了。先去<a href="https://github.com/arcusmaximus/KirikiriTools/releases/tag/1.7">https://github.com/arcusmaximus/KirikiriTools/releases/tag/1.7</a>下载version.dll文件，接下来用enigma virtual box封装好（使用方法参考文章 <a href="https://www.bilibili.com/read/cv21304747/">https://www.bilibili.com/read/cv21304747/</a>），最后你应该会得到一份exe文件，先别急着打开，找到游戏原文件以exe.sig为后缀的文件，把他复制一份重命名为：你刚才新得到的exe文件名字.exe.sig</p><p>接下来打开游戏就能玩了！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="https://auroraisok.online/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一些自我思考</title>
     <link href="https://auroraisok.online/posts/6b15072e.html"/>
     <id>https://auroraisok.online/posts/6b15072e.html</id>
     <published>2024-06-27T13:03:15.000Z</published>
-    <updated>2024-06-27T13:15:26.383Z</updated>
+    <updated>2024-06-27T13:15:35.784Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我发现我的博客里技术类文章写的比较少、一些言辞比较激烈的时评文章比较多，个人意识倒意识到有些不当之处（尽管这个破网站注册时的匿名性做得不错)。</p><p>探讨分析是值得的、但是在如今的环境下不太适合、更多是种一面之词。不是说这个话题不好、只是意识到不合适?我意识到自己，更多的时候写东西时是偏情绪化的、而且有时是比较疯狂的。</p><hr>以后打算多写些gal评测之类的，这是我自己的想法。相比于一些时评类文章也更安全、也更好放在台面上评价。<p>至于有参考价值的技术类博文、我倒经常在b站上写。</p><hr>一件很好玩的事，今天打开Light.vn引擎、做Gal玩，结果忘了一些东西，我看着自己以前写的教程、向我自己学习)也挺离谱的。]]></content>
     
@@ -35,6 +57,72 @@
     
     
     <category term="闲聊" scheme="https://auroraisok.online/tags/%E9%97%B2%E8%81%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【推荐】一些催泪、深刻的galgame</title>
+    <link href="https://auroraisok.online/posts/1676d263.html"/>
+    <id>https://auroraisok.online/posts/1676d263.html</id>
+    <published>2024-06-26T14:21:08.000Z</published>
+    <updated>2024-06-27T13:26:22.624Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>写于2023.12.17</p><p>文章为推荐文，不提供任何资源下载。</p><p>我想推荐的是，给自己留下深刻感触的游戏，它们以出色的剧情、或深刻的哲理，引发自己对社会、现实、人性、情感的思考。希望更多的人能接触、了解他们。</p><hr><p>1.《杀恋~悠久流传的恋之歌～》类型：催泪、兄妹、亲情、爱情、友情。 会社：蜂巢社 发售年份：2014年<br><img src="https://img2.baidu.com/it/u=162306009,1561425672&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500"></p><p>故事设定了这样的一个种族：人鱼族。它们每次繁衍时，都会生下雌雄人鱼一对。雄人鱼的使命是保护雌人鱼安全、与自己的姐姐或妹妹交配、最后被雌人鱼吃掉。<br>故事的主角正是一条雄人鱼，年幼时暴躁的母亲差点杀了自己和妹妹，自己被养父收养，过着学院生活。而最后他不得不面对人鱼的使命，与妹妹重逢、把爱献给了妹妹。</p><p>游戏的主题很明确，有与好友的友情，与养父、姐姐妹妹的亲情、与恋人的爱情。故事是悲剧的，刀了我一年尚未痊愈。</p><p>优点：剧情引人入胜、氛围好、音乐优秀<br>缺点：画风不太讨喜</p><p>我一直喜欢看兄妹为主题的悲剧，这部作品给我留下很深的印象，催泪、忧郁、而又感人至深。</p><hr><p>2.《美少女万华镜》类型：超自然、人性 会社：ωstar 发售年份：始于2011，上一步作品于2020年发售<br><img src="https://www.helloimg.com/images/2022/08/05/Z0WvSE.jpg"></p><p>游戏围绕着一个小小的万华镜展开。主角深见夏彦前往乡间旅馆，并结识了旅馆里的座敷童子莲华，莲华手中有个万华镜，透过万华镜，夏彦看到了一个又一个故事。</p><p>美少女万华镜系列最先出名，可能是因为其吸引人的画风、出色的动态 CG，很多人的印象深刻的，可能是第一部雾枝与滋比古飙车那段情节，于是万华镜被冠以 拔作之名。</p><p>实际上，万华镜这一系列，总是能引人深思。抛开第一部和第 2.5 部（外传）不谈，2、3、4、5 每一部都能引人深思、令人震撼。</p><p>万华镜善用悬疑和伏笔，总是能 “揭开一个令人震惊的真相”，每一步都有明确的主题。<br>玩第二部《勿忘草与永远的少女》，勿忘草代表的是永恒不变的爱意、永远的少女则是永不变心、保持本性的女主雫，留给我的是因为误解、负罪感、现实不如意而导致的未能表白心意的故事，让我惋惜；<br>第三部《神明创造的少女们》，教主、村民、盛开的向日葵，讽刺的又是谁呢？<br>而第四部《罪与罚的少女》，犯罪的是谁？而接受惩罚的又是谁？社会伦理和现实的黑暗引人深思。<br>第五部《理与迷宫的少女》，迷茫的少女、最后敢于直面天理，最后收获幸福。<br>在第五部，当看见莲华与夏彦相拥，忍不住泪流直下 —— 一对普通人、朴实简单的爱恋，最后携手共同面对困难、打破身份、对抗天理。</p><p>每一部万华镜，都是对人性的思考</p><hr><p>3.《Narcissu》，类型：生死观、致郁、催泪、人性 会社：stage nana 发售年份：始于2005，2016年发布10周年纪念版<br><img src="https://img1.baidu.com/it/u=3855079248,3143090337&fm=253&fmt=auto&app=138&f=JPEG?w=564&h=247"><br>当你身患重病、即将离世你会怎样？《Narcissu》带着玩家，观看了一个个临死之人的故事。死者所希望的，是生者能放下羁绊、往前看。 《Narcissu》讲述了一个个平凡人面对死亡的故事，不像一些作品：乐观面向死亡、快乐的死去…真的能做到吗？《Narcissu》则更为现实，氛围致郁、话题深刻、心理描写充足。用最质朴的语言描写最重要的事，朴实而又感人、平淡却又真实。</p><hr><p>4.《生命的备件》，类型：生死、催泪、爱情、人性 会社：Akabei Soft3 发售年份：2016<br><img src="https://www.helloimg.com/images/2022/05/11/RQpvrc.jpg"></p><p>有一种疾病叫做樱纹病，得了这个病的人，只能通过移植匹配的心脏而活下。这颗心脏，由血亲提供。<br>女主角夙川惠璃得了同样的病，于是通过基因工程制造出了妹妹璃亚 ——<br>只因作为姐姐心脏的替代品。为了治疗身患不治之症的姐姐，为了姐姐而诞生的妹妹。除了夙川家，还有一个人知道这个秘密。那就是惠璃的朋友静峰龙次。<br>是选择死亡、还是选择妹妹？</p><p>游戏早早地就向玩家抛出了难题，是选择妹妹、还是选择自己。可悲的是，女主与男主在发展过程中，产生了名为爱情的东西。<br>游戏的主题十分明确：生命、爱情、亲情。但相比致郁的《Narcissu》，这部的氛围没有特别压抑，最后的结局、浪漫而又感人。</p><p>我爱你，真的是至死不渝</p><hr><p>5.《summer pockets:reflection blue》类型：亲情、友情、爱情、催泪 会社：key 发售年份：2020<br><img src="https://acg.qingjuacg.top/wp-content/uploads/2023/03/10d9162e19213343.jpg"><br>这部作品属于是《summer pockets》的加强版，于是直接推荐这部玩。</p><p>玩家在游戏中扮演主人公鹰原羽依里，为整理过世祖母的遗物前往位于濑户内海的鸟白岛，邂逅岛上的四名少女，并且在互动过程逐步发现岛上不为人知的秘密。</p><p>玩这部作品时，我会不时想起《Clannad》，无论是男主还是女主，都有很大的相似之处。而且都是以轻松搞笑的日常走向催泪的结局。</p><p>游戏里每一个人物都有着自己故事，都挺不错的。而且游戏的玩法也很出众，可以规划男主一天在岛上的行动、可以打乒乓球、可以玩岛可梦。在欢乐与哭泣中度过快乐的暑假（可惜我是冬天玩的。。）</p><hr><p>6.《Clannad》类型：亲情、友情、爱情、催泪 会社：key 发售年份：2004<br><img src="https://picst.sunbangyan.cn/2023/12/24/7f7ff24fdc7050276f37fe33f1eb30c5.jpeg"></p><p>《Clannad》相比动漫党都不陌生了，一个小镇、几代亲人。有着最伟大的父亲、最悲情的男主、最催泪的BGM、最深刻的人生哲理，key社三部曲之一，自认为是三部曲中最优秀的一部。</p><p>诗云：<br>雪中智代雨中杏，<br>樱下小渚花田汐。<br>篱园琴美空屋椋，<br>啡香有纪恋星风。</p><p>优点自不用多说，缺点是游戏难度高（建议跟着网上的攻略玩，否则可能解锁不了后来小汐的故事），画风较为老旧（经典“桶妈脸”）</p><hr><p>我比较喜欢这些作品，每个人都有着不同的理解，这里只是谈谈自己的看法。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="galgame" scheme="https://auroraisok.online/tags/galgame/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【杂谈】柚子社历史</title>
+    <link href="https://auroraisok.online/posts/e589386.html"/>
+    <id>https://auroraisok.online/posts/e589386.html</id>
+    <published>2024-06-26T13:30:28.000Z</published>
+    <updated>2024-06-27T13:28:13.298Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>写于2023.12.21</p><p>近些年来，柚子社在圈内名气一直很高，甚至在圈外都有一定的知名度。柚子社的废萌剧情、可爱画风、搞笑演出，得到了大部分玩家的喜爱。于是搜集资料，聊一聊柚子社的发展史。</p><hr><h1>诞生</h1><p>柚子社的成员最先是有六个人，全部来自于 株式会社Visual Art’s.在当时，Visual Art’s算是比较有名的公司了，旗下游戏品牌众多，比如Key社——《Clannad》:能哭的地方只有厕所和爸爸的怀里；SAGA PLANETS：《闪耀青春追逐记》、《ambitious mission》；包括冷门佳作《对你说再见》（俗称sayo教）也是其子品牌的作品。在2023年，Visual Art’s 被腾讯收购了</p><p>柚子社6名创业人Famishin、小舞一（こぶいち）、梦璃凛（むりりん）、天宫リツ、煎路、ろど，原是Visual Art’s旗下品牌之一Studio Mebius（已经白死不活啦）的职员，曾参与《SNOW》的制作。《SNOW》这部作品在当时获得了比较大的成功，几个年轻人觉得自己可以进行创业，开辟属于自己的天地</p><p>后来六人离开工作室，成立同人组织“TEAM-EXODUS”，于2005年12月30日在C69发售同人游戏《しょうよん! コドモ☆ちゃれんじ》。</p><p>其后“TEAM-EXODUS”作为母体，以Famishin为代表人法人化，创立柚子社（YUZU SOFT），并于2006年7月28日发售处女作《BRA-BAN! -The bonds of melody-》。截至目前（不算上子公司“酸柚子”）一共发布了12部作品。</p><p>柚子社六元老到现在也比较活跃，Famishin主要负责音乐和导演，在新作《天使纷扰》中也是负责起了这两项工作；小舞一（こぶいち）、梦璃凛（むりりん）主要负责原画，两人互相学习、交流，你所喜欢的很多角色基本都是这两人画的，柚子社的两个王牌画师；天宫リツ主要负责剧本，煎路主要负责画一些CG，ろど负责一些杂务（如网站设计、影片设计）</p><hr><h1>起步阶段:不断尝试</h1><p><img src="https://picdl.sunbangyan.cn/2023/12/21/f453a217725b046dad2dfb1f28872142.jpeg"></p><p>柚子社的第一部作品是《管乐恋曲！<del>The bonds of melody</del>》，于2006年7月28日发售。作为柚子社的处女作，是柚子社少有的纯校园无魔幻要素的作品，这一部作品能体现出柚子社对于现实的思考，对离异家庭和校园霸凌进行了适当的探讨，并且已经有了天台野战，摔跤，月工之类的要素了，每个女主和两个配角都有出场BGM，甚至还为最后的演出甚至专门做了动画。但是缺点也比较明显：剧情发展过快、部分桥段重复，属于是一部纯日常、比较中规中矩的作品，没有大卖也没有亏本。</p><p>第二部作品是《E×E》，可以说是柚子社的黑历史了。在发售了处女作后，柚子社想尝试做一些剧情作，把侧重点往剧情方向转移，决定做一个比较黑深残的作品，学习隔壁虚渊玄，于2007年6月1日发售这部作品。背景设定不错：苦命男主遇到本应该死去的母亲却反被攻击，背后藏着什么秘密？但是无奈 天宫リツ 能力并不足够优秀，主线剧情不完整、还有ntr元素混入。一些东西让玩家看的莫名其妙，更像是一部残次品，理所当然，这部作品销量惨淡。</p><hr><h1>柚子剧情巅峰作（自己认为...）：夏空彼方</h1><p><img src="https://picdm.sunbangyan.cn/2023/12/21/f7a7958ac3dfba94159d9fa9c143e084.jpeg"></p><p>经历了第二次失败后，柚子社深深地反省了自己的问题，天宫リツ 也意识到自己能力有限，于是拉上了另一个脚本家 玉泽圆，经过反省、构思，于2008年5月23日发售了第三部作品《夏空彼方》。故事讲述了男主朝仓壮太在假期期间来到了塔弦岛度假，住在叔母家的旅馆帮忙的故事（key社的夏日口袋会不会也是参考了这部作品呢？），催泪的剧情、优秀的人设，甚至有人称之为“第二部《Clannad》”。销量上远超上一部作品。值得一提的是，上部作品在国内没有多少汉化组接手，而这一部各种版本的汉化遍地开花，也得到了汉化组组员的好评。这部作品也比较特殊，只有三条女主线，没有单人线，剧情方面借鉴了欧美的一部电影《初恋50次》</p><p>我觉得，这部作品宣告了柚子社探索阶段的结束。柚子社在催泪方面还是进行了一定的尝试。不过，催泪的剧情、感人的音乐，估计柚子社再也做不出第二部《夏空彼方》了。可见是一个重要的转折点。有人说：夏空之后无柚子。也有人说：夏空之后真柚子。前三部作品柚子社一直在寻找自己的方向，风格也各有迥异，自《夏空彼方》后柚子社找到了自己的方向和定位。</p><hr><h1>初识废萌</h1><p><img src="https://picdm.sunbangyan.cn/2023/12/21/ab70f031f3baee86b791f8b424a5f1c4.jpeg"></p><p>在上一次作品成功之后，柚子社开始尝试去制作废萌，华丽的转型为废萌，并将技术进行革新，启用了1280*720的分辨率。<br>两名王牌画师的技艺也炉火纯青，两个人画的立绘根本分不清是谁画的，画风几乎统一。<br>脚本家 天宫リツ 也拉了其他人共同创作，如写过《纯白交响曲》的北川晴、“中二社”的镜游（代表作《悠久之翼》）、绀野アスタ(代表作《亚托莉:我挚爱的时光》)，一起创作了很多优秀的作品。</p><p>从第四作《天神乱漫》起，柚子社的风格转向了轻松的日常搞笑（毕竟谁不喜欢可爱的美少女呢），UI系统也在带带更新进步，在第五部作品《noble works》里就已经具备了backlog跳跃的功能，第六部《DRACU-RIOT!》在剧情和黑深残等方面进行了适当的尝试，但还是以废萌为主，到第七部《天色幻想岛》，画风已经开始有近些年柚子作品的感觉了。</p><hr><h1>废萌领跑者：从0721开始！</h1>到了2015年，一部作品的横空出世以及出色的成绩，更是坚定了柚子社做废萌的决心，以图书馆0721开始，再到上头的Ciallo～(∠・ω< )⌒★，成为了柚子厨必备技能。柚子社的画风、UI系统、脚本都走向了成熟。这部作品就是《魔女的夜宴》<p><img src="https://picdl.sunbangyan.cn/2023/12/21/316bd893beaa6a1f1382dac443a75ff3.jpeg"></p><p>这部作品在国内的名气只增不减，出现了各种各样的同人二创、以及网友制作的各种奇怪的表情包，更是教会了广大柚子厨如何0721以及打招呼的正确用语，是柚子社废萌作品走向成熟的转折点，从此以后柚子厨数量暴增。</p><p>之后柚子社的作品越来越受欢迎，光《千恋*万花》销量就超过了40万份，柚子社也开始沿用Ciallo梗，讨喜的剧情和人设、没有黑深残的剧情、轻松搞笑的日常，获得广大玩家的喜爱。之后柚子社创立了子公司yuzusoft sour，子公司目前只发售了《PARQUET》这部作品。2023年4月28日，柚子社推出新作《天使☆騒々 RE-BOOT!》</p><p><img src="https://picss.sunbangyan.cn/2023/12/21/4fb7aec6498cec1df43221d69ed9b3e9.jpeg"></p><hr><h1>总结</h1>从柚子社的发展史中，可以看出，最先柚子社还是尝试了许多，有黑深残、有刀子剧情作，后来开始主打废萌，可能废萌才是柚子社最擅长的吧，很多人也喜欢废萌。但柚子社的作品里，还是有刀子作剧情作的。或许柚子社不太擅长于制作一些黑深残、催泪的剧情作，不过柚子社能找到自己的定位、做自己擅长的类型，并慢慢发展下去，结果还是很不错的。]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="galgame" scheme="https://auroraisok.online/tags/galgame/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【解包记录】island</title>
+    <link href="https://auroraisok.online/posts/5f9ce932.html"/>
+    <id>https://auroraisok.online/posts/5f9ce932.html</id>
+    <published>2024-06-26T13:10:00.000Z</published>
+    <updated>2024-06-27T13:27:20.051Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>写于2024.1.28</p><p>今天正好在玩《island》——前翼社的一部全年龄向作品，时间轮回和悬疑类的全年龄作品，推荐大家玩哦！秉着一玩一解包的原则，于是解包《island》。当我打开惯用的Garbro时，发现一些文件解不开。于是记录一下解包过程。</p><hr><h1>一、如果只提取CG的话...</h1>https://wwci.lanzouo.com/i33perc  使用这个，直接选择image.int文件，图片格式看自己需求。<p>优点:方便快捷<br>缺点:只能提取CG</p><h1>二、使用exkifint</h1>http://asmodean.reverse.net/pages/exkifint.html 这是由外国人制作的，使用起来也不困难，只需基础的命令行知识就好<p>首先下载后，解压exkifint.zip。将exkifint_v2.exe与你想要提取的Int文件放在同一文件夹，win+R cmd调出命令行。</p><p>我们先在命令行运行一下软件，输入软件路径，enter回车，看到：</p><hr><p>usage: D:\gal\jiebaoceshi\exkifint_v2.exe &lt;input.int&gt; [game id]<br>         game id &#x3D; game specific id, probably found in startup.xml (v_code tag)<br>                   [Default &#x3D; TSUNABAN-LM]</p><hr><p>根据我们小学三年级的英语知识能看懂：我们需要int文件的路径和game id,game id在startup.xml里有，是v_code后面的一串字符。于是搜索到xml文件，ctrl+f检索v_code，很容易找到id,复制一下。</p><p>每个人的文件夹不同，想解包的文件不同，以我为例，我先看游戏里的视频。我输入了：<br>D:\gal\jiebaoceshi\exkifint_v2.exe movie.int FW-L3EY8BDY<br>其中FW-L3EY8BDY是《ISLAND》这款游戏的game id<br>之后就解包出来文件了</p><hr><p>游戏使用的是CatSystem2引擎，想要了解更多的小伙伴可参考（文本处理还需要其他软件）<br><a href="https://ultrapre.github.io/clip/%E5%88%9D%E7%AA%A5Galgame%E6%B1%89%E5%8C%96/2019-10-01-1569942419/index.html">https://ultrapre.github.io/clip/%E5%88%9D%E7%AA%A5Galgame%E6%B1%89%E5%8C%96/2019-10-01-1569942419/index.html</a></p><p><a href="https://www.bilibili.com/video/BV1ph411J7Pf/?vd_source=8da73da88cc8aea936d6cad8f00a442d">https://www.bilibili.com/video/BV1ph411J7Pf/?vd_source=8da73da88cc8aea936d6cad8f00a442d</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="galgame" scheme="https://auroraisok.online/tags/galgame/"/>
     
   </entry>
   
@@ -303,6 +391,50 @@
   </entry>
   
   <entry>
+    <title>【免费开源】AI语音合成工具——效果堪比真人</title>
+    <link href="https://auroraisok.online/posts/173232f9.html"/>
+    <id>https://auroraisok.online/posts/173232f9.html</id>
+    <published>2024-01-31T08:09:10.000Z</published>
+    <updated>2024-06-27T13:24:42.150Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>对于一个医学生来说，经常访问github能帮助他开阔计算机视野。前几天在github找到了一个<a href="https://github.com/RVC-Boss/GPT-SoVITS/">AI语音合成项目</a>，截止目前已经有了7.7kstar,后来知道是b站up主“花儿不哭”大佬和他的团队做的开源免费项目，并在b站发了专门的<a href="https://www.bilibili.com/video/BV12g4y1m7Uw/?spm_id_from=333.337.search-card.all.click">视频</a>。up讲的比较快我最先也没看懂，推荐看<a href="https://www.bilibili.com/video/BV1P541117yn/?spm_id_from=333.337.search-card.all.click">这个视频</a>。</p><p>这门技术制作出的语音，效果堪比真人，有<a href="https://www.bilibili.com/video/BV13N411J7gM/?spm_id_from=333.999.0.0">AI毕导解说红警的</a>、有<a href="https://www.bilibili.com/video/BV1aQ4y1w7bF/?spm_id_from=333.337.search-card.all.click">AI东雪莲的</a>，我用来做<a href="https://www.bilibili.com/video/BV1DB42167MJ/?spm_id_from=333.999.0.0">gal杂谈视频</a>。效果堪比真人，隔壁毕导的话：我真以为是我在解说！！！我心想我什么时候解说过！！！</p><hr><p>先放一键整合包链接：<br><a href="https://pan.baidu.com/s/1OE5qL0KreO-ASHwm6Zl9gA?pwd=mqpi%EF%BC%88%E5%BA%A6%E7%9B%98%E8%A6%81%E6%B0%AA%E8%B6%85%E7%BA%A7%E4%BC%9A%E5%91%98%E6%89%8D%E8%83%BD%E6%BB%A1%E9%80%9F%E4%B8%8B%E8%BD%BD%EF%BC%89">https://pan.baidu.com/s/1OE5qL0KreO-ASHwm6Zl9gA?pwd=mqpi（度盘要氪超级会员才能满速下载）</a><br><a href="https://www.123pan.com/s/5tIqVv-GVRcv.html%EF%BC%88%E5%8F%AF%E6%BB%A1%E9%80%9F%E4%B8%8B%E8%BD%BD%E4%BD%86%E6%98%AF%E8%A6%81%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7%EF%BC%89%EF%BC%8C%E6%8E%A5%E4%B8%8B%E6%9D%A5%E5%86%99%E4%B8%80%E5%86%99%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%80%82">https://www.123pan.com/s/5tIqVv-GVRcv.html（可满速下载但是要注册账号），接下来写一写使用方法。</a></p><hr><p>分以下情况：</p><h1>我是小白，我的电脑显卡配置很好，我用的windows系统</h1>直接下载楼上的一键整合包，按[视频](https://www.bilibili.com/video/BV1P541117yn/?spm_id_from=333.337.search-card.all.click)讲解操作。值得注意的是，在人声和背景音乐分离的步骤，我不清楚是不是bug会报错，如果你也报错的话可以试试这个[在线人声背景音乐分离网站](https://vocalremover.org/zh/)。按着视频讲解走就好<hr><h1>我有一定代码知识，我会用git，我会用github</h1>直接克隆项目地址：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/RVC-Boss/GPT-SoVITS.git</span><br></pre></td></tr></table></figure><hr><p>创建环境</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda create -n gpt-sovits python=3.9</span><br><span class="line">conda activate gpt-sovits</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line">conda install ffmpeg</span><br></pre></td></tr></table></figure><p>下载以下两个文件到GPT-SoVITS项目根目录</p><p><a href="https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/ffmpeg.exe">https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/ffmpeg.exe</a></p><p><a href="https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/ffprobe.exe">https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/ffprobe.exe</a></p><hr><p>下载模型</p><p>在GPT_SoVITS\pretrained_models打开终端输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://huggingface.co/lj1995/GPT-SoVITS</span><br></pre></td></tr></table></figure><hr><p>因为huggingface是国外的，所以可能会克隆失败，那么我们换用国内的镜像</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git lfs install</span><br><span class="line">git clone https://www.modelscope.cn/models/AI-ModelScope/GPT-SoVITS</span><br></pre></td></tr></table></figure><hr><p>下载完模型后，将模型文件拷到GPT_SoVITS\pretrained_models目录下。<br>接着到modelscope下载以下模型</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://www.modelscope.cn/iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch.git</span><br><span class="line">​</span><br><span class="line">git clone https://www.modelscope.cn/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch.git</span><br><span class="line">​</span><br><span class="line">git clone https://www.modelscope.cn/iic/punc_ct-transformer_zh-cn-common-vocab272727-pytorch.git</span><br></pre></td></tr></table></figure><hr><p>将以上模型文件放到tools&#x2F;damo_asr&#x2F;models目录下。</p><p>如果训练的音频数据有杂音的话，还需要下载UVR5模型对音频先进行去噪处理，放到tools&#x2F;uvr5&#x2F;uvr5_weights目录下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://huggingface.co/lj1995/VoiceConversionWebUI</span><br></pre></td></tr></table></figure><p>配置好环境和模型后，在终端输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python webui.py</span><br></pre></td></tr></table></figure><p>关于报错，如果是“AssertionError: Torch not compiled with CUDA enabled”，说明装的Torch不是CUDA版本的，需要重装对应的CUDA版本的pytorch。</p><p>如果在离线批量ASR时报错“KeyError: ‘funasr-pipeline is not in the pipelines registry group auto-speech-recognition. Please make sure the correct version of ModelScope library is used.’”，<br>改“tools\damo_asr\cmd-asr.py”的代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">path_asr=&#x27;tools/damo_asr/models/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch&#x27;</span><br><span class="line">path_vad=&#x27;tools/damo_asr/models/speech_fsmn_vad_zh-cn-16k-common-pytorch&#x27;</span><br><span class="line">path_punc=&#x27;tools/damo_asr/models/punc_ct-transformer_zh-cn-common-vocab272727-pytorch&#x27;</span><br><span class="line">path_asr=path_asr if os.path.exists(path_asr)else &quot;damo/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch&quot;</span><br><span class="line">path_vad=path_vad if os.path.exists(path_vad)else &quot;damo/speech_fsmn_vad_zh-cn-16k-common-pytorch&quot;</span><br><span class="line">path_punc=path_punc if os.path.exists(path_punc)else &quot;damo/punc_ct-transformer_zh-cn-common-vocab272727-pytorch&quot;</span><br><span class="line">model = AutoModel(model=path_asr,</span><br><span class="line">                  vad_model=path_vad,</span><br><span class="line">                  punc_model=path_punc,</span><br><span class="line">                  #spk_model=&quot;damo/speech_campplus_sv_zh-cn_16k-common&quot;,</span><br><span class="line">                  #spk_model_revision=&quot;v2.0.0&quot;</span><br><span class="line">                  )</span><br><span class="line">opt=[]</span><br><span class="line">for name in os.listdir(dir):</span><br><span class="line">    try:</span><br><span class="line">        text = model.generate(input=&quot;%s/%s&quot;%(dir,name),</span><br><span class="line">                     batch_size_s=300, </span><br><span class="line">                     hotword=&#x27;魔搭&#x27;)</span><br><span class="line">        print(f&quot;asr text:&#123;text&#125;&quot;)</span><br><span class="line">        opt.append(&quot;%s/%s|%s|ZH|%s&quot;%(dir,name,opt_name,text))</span><br><span class="line">    except:</span><br><span class="line">        print(traceback.format_exc())</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>接下来和整合包用法一模一样了（累死我了</p><hr><h1 id="我的显卡太垃圾了，我想云端训练怎么办？"><a href="#我的显卡太垃圾了，我想云端训练怎么办？" class="headerlink" title="我的显卡太垃圾了，我想云端训练怎么办？"></a>我的显卡太垃圾了，我想云端训练怎么办？</h1><p><a href="https://www.bilibili.com/video/BV1sg4y127GD/?spm_id_from=333.337.search-card.all.click&vd_source=8da73da88cc8aea936d6cad8f00a442d">参考视频</a><br>给你们两个镜像：<a href="https://www.codewithgpu.com/i/RVC-Boss/GPT-SoVITS/GPT-SoVITS">镜像一</a><br><a href="https://www.codewithgpu.com/i/RVC-Boss/GPT-SoVITS/GPT-SoVITS-Official">镜像二</a></p><hr><h1 id="我是linux系统用户或者macOS用户，想要本地训练"><a href="#我是linux系统用户或者macOS用户，想要本地训练" class="headerlink" title="我是linux系统用户或者macOS用户，想要本地训练"></a>我是linux系统用户或者macOS用户，想要本地训练</h1><p>参考<a href="https://github.com/RVC-Boss/GPT-SoVITS/blob/main/docs/cn/README.md">官方文档</a>，在CSDN逛一逛、知乎逛一逛，b站逛一逛，写教程的人一大堆。</p><hr><h1 id="我不管，我就想白嫖，直接玩"><a href="#我不管，我就想白嫖，直接玩" class="headerlink" title="我不管，我就想白嫖，直接玩"></a>我不管，我就想白嫖，直接玩</h1><p>拿走不谢：</p><p><a href="https://www.modelscope.cn/studios/xzjosh/Bert-VITS2/summary">https://www.modelscope.cn/studios/xzjosh/Bert-VITS2/summary</a></p><p><a href="https://www.modelscope.cn/studios/xzjosh/GPT-SoVITS/summary">https://www.modelscope.cn/studios/xzjosh/GPT-SoVITS/summary</a></p><hr><p>训练出的所有的模型请在法律范围内使用。花儿不哭大佬在视频结尾说的一番话，很耐人寻味。思考这种技术，如果落在某讯某飞手里，我们平常人估计很难接触这项技术，使用的话估计也是收费使用的。而开源项目则让这些技术更能服务于大家，而不是掌握在“少数人手里”——开源项目也可以做得很好。背后咬牙切齿的，就是那批赚不到钱、割不到韭菜的人了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="https://auroraisok.online/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wordpress网站一键备份</title>
+    <link href="https://auroraisok.online/posts/4ff4be91.html"/>
+    <id>https://auroraisok.online/posts/4ff4be91.html</id>
+    <published>2024-01-10T08:50:25.000Z</published>
+    <updated>2024-06-27T13:31:54.454Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>写于2024.1.10，当时在折腾wordpress</p><p>由于自己入侵了自己的网站“樱韵”，自己在匮乏的技术力下，一怒之下把网站删了（幸好我有备份).然而当我打开我的备份插件All-in-One WP Migration时，发现只能上传50MB文件大小，而我的网站有177MB，扩充上传大小需要付费。我当时忍不住怒骂：是哪个**给我推荐的这个备份插件！</p><hr><p>但是，有困难就一定有解决方法，在技术社区潜水多日，找到了解决办法。</p><p>此方法目前只在<a href="https://wanhebin.lanzoui.com/i69af1g">All-in-One WP Migration 6.77</a>版本中测试有效：</p><p>1.我们找到插件编辑器，并选择All-in-One WP Migration。<br><img src="https://www.wanhebin.com/wp-content/uploads/2019/09/All-in-One-WP-Migration-1.png"><br>2.打开 Constants.php 文件<br><img src="https://www.wanhebin.com/wp-content/uploads/2019/09/All-in-One-WP-Migration-2.png"><br>3.编辑 Constants.php 文件，点击Ctrl+F 查找 Max File Size这行代码，会发现这行代码出现在282行上下。<br><img src="https://www.wanhebin.com/wp-content/uploads/2019/09/All-in-One-WP-Migration-3.png"><br>我们把 2 &lt;&lt; 28 修改成4294967296（这是以字节为单位，即4GB，根据个人需要来修改），修改后如下图<br><img src="https://www.wanhebin.com/wp-content/uploads/2019/09/All-in-One-WP-Migration-4.png"><br>4.保存<br><img src="https://www.wanhebin.com/wp-content/uploads/2019/09/All-in-One-WP-Migration-5.png"><br>5.回到导入功能选型，此时已经测试成功了。</p><p><img src="https://www.wanhebin.com/wp-content/uploads/2019/09/All-in-One-WP-Migration-6.png"></p><hr><p>在这个方法下，直接扩充到4GB（改数字其实可以无限扩充，但4GB已经够我用了）<br><a href="https://www.wanhebin.com/blgd/216.html">感谢大佬的教程</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="网站" scheme="https://auroraisok.online/tags/%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【杂谈】破解压缩包密码</title>
     <link href="https://auroraisok.online/posts/d101cf74.html"/>
     <id>https://auroraisok.online/posts/d101cf74.html</id>
@@ -321,28 +453,6 @@
     
     
     <category term="技术" scheme="https://auroraisok.online/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【游戏推荐，柚子社】夏空彼方</title>
-    <link href="https://auroraisok.online/posts/aab03084.html"/>
-    <id>https://auroraisok.online/posts/aab03084.html</id>
-    <published>2023-12-24T11:21:06.000Z</published>
-    <updated>2024-06-25T03:14:57.433Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>前言</h1>提起柚子社，大多数人会想到什么？是“面硬加咸蔬菜加倍蒜末和油多多”还是“Ciallo～(∠・ω< )⌒★”，亦或是请看我0721吧！《千恋万花》、《魔女的夜宴》等作品出圈、柚子厨数量大增<p><img src="https://picst.sunbangyan.cn/2023/12/24/4ac478a5569e57b52a1fde1550547cce.jpeg"></p><p><img src="https://picst.sunbangyan.cn/2023/12/24/1a27ca6ef88c50666b9ef782ee6ffcdb.jpeg"></p><p><img src="https://picdl.sunbangyan.cn/2023/12/24/c10e2beb50f1315ac4fa5c5da8ebe40e.jpeg"></p><p>玩家对于柚子社的印象，普遍是纯爱无牛、废萌、搞笑、甜度满满。没有黑深残的剧情、搞笑温馨的日常，朝武芳乃、绫地宁宁、在原七海、丛雨等人气角色，深得柚子厨的喜欢，很多新人入坑作品也是柚子社的作品。</p><p>前几天在一个群里，一名群友说要玩完柚子社全部作品，因为他太喜欢0721了(bushi,于是有人提出玩《夏空彼方》,于是喜欢0721的群友下载了这份游戏并开始游玩，玩完后表示：这是……柚子社的作品吗?</p><hr><h1>柚子社特殊的一部作品</h1><h2>一.意义上的特殊性</h2>《夏空彼方》是柚子社第三部作品，于2008年05月23日发行。这部作品与之后的《千恋*万花》、《riddle joker》等废萌向作品不同，算是柚子社唯一一部剧情作、催泪作——向来主打废萌的柚子社居然也会写刀子！制作这部作品时的柚子社，正处于探索阶段，上一部作品《EXE》因为剧情混乱和ntr元素乱入（柚子社也会写ntr!!）,销量不佳成为“黑历史”，这部作品柚子社下了一定的功夫，在日本销量平平，可在国内小有名气。虽然存在着一些小瑕疵，不过并不影响作品本身。游戏中的一些设定，似乎给之后的作品留下了启发（《夏日口袋》会不会参考了这部？）。尤其是《夏空彼方》神ED，曲子让我循环千遍（这是柚子社的曲子？！！）(因为莫名其妙插入音乐的代码用不了就用视频代替)<iframe src="//player.bilibili.com/player.html?aid=325177528&bvid=BV1Uw411V7X7&cid=1377770523&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><p>这部作品在柚子社的历史上具有重要意义，它为柚子社提供了一种可能：柚子社是可以制作刀子作的。可是现实是销量平平，大部分人喜欢废萌，只能说是现实的骨感，《夏空彼方》的下一部作品《天神乱漫》，在销量上明显比《夏空彼方》高出很多。如今柚子社在废萌的道路上一去不复返，柚子社，可能再也不会制作、也制作不出第二个《夏空彼方》了。</p><p><img src="https://picst.sunbangyan.cn/2023/12/24/0aa1b441010cf9ff95a4cdb53eb47089.jpeg"></p><hr><h2>流程的特殊性</h2>纵观柚子社的大部分作品，女主数量总是在4个以上，而这部作品只有3位可攻略女主。拿《千恋*万花》举例，柚子社的常用套路：接主线任务（消灭祟神）、与各女主见面、进入支线、任务完成、恩恩爱爱的H生活。而这部作品比较特殊，游戏只有三位女主，根本没有主线任务，在逛庙会时有三个选项，直接进入三条支线。而且进入茅羽耶线，沙沙罗不会出现；进入沙沙罗线，茅羽耶不会出现；进入由比子线，前两位女主都不会出现。攻略柚子社女主需要几天？本作告诉玩家:三天足矣!这个也经常被玩家吐槽，认可就好了***<h2>题材的特殊性</h2>大多柚子社的作品，主要是校园恋爱（如《千恋*万花》、《魔女的夜宴》、《riddle joker》，男女主都得上学），而本作终于没有学校啦！是罕见的“亲情”题材<font color=red>（柚子社唯一一部不用上学的作品）</font>***<h1>剧情简介（微剧透）</h1>故事以长年夏天的热带岛屿为舞台,讲述每年12月到亲戚家旅馆打工，而来到日本唯一的热带岛屿“塔弦岛”的主人公朝仓壮太。与表妹三好由比子，刚从外岛搬过来不久的上坂茅羽耶，神秘少女七条沙沙罗相遇。随着时间的流逝，隐藏在这个岛上的秘密也慢慢浮出了水面。<p>整部作品，关键词有五个：悬念、解开秘密、亲情、催泪、执著的爱情。<br>游戏一共有三条线路，在烟火大会玩家和朋友走失时，会面临三个选项，每一个选项是一个线路。其中茅羽耶线有两个结局，第二个结局在二周目时才能解锁</p><h2>上坂茅羽耶线</h2><p><img src="https://picst.sunbangyan.cn/2023/12/24/bb3da6b4a9f876da24b18caa3080f74d.jpeg"></p><p>上坂茅羽耶是这部游戏的C位女主，这条线路是游戏的主要线路。整体游玩下来体验感优秀，音乐恰到好处，剧情感人有吸引力，如果说不足的话，女主塑造上可以再多下些功夫，另外就是著名的“三天攻略女主”（属实有些离谱）。</p><p>上坂茅羽耶线所传达的主题，我概括为”执著、永不放弃的爱”。一是父母与女儿的爱，茅羽耶为爸爸始终如一做礼物、父母为女儿执着的努力（不过多剧透）；二是男主与女主的永恒不变的爱，朝仓壮太始终未放弃过上坂茅羽耶，面临了很多困难、有物理上的，也有精神上的，却始终如一。而茅羽耶也始终爱着朝仓壮太；第三种爱，是“祈愿之爱”，史绪夫人为实现茅羽耶和壮太的愿望，不惜折掉寿命，而茅羽耶希望接过史绪夫人的责任，希望史绪能够利用好生命休息。推完之后，留下的不光是伤感的BGM，还有感动的泪水和无尽的回味。</p><hr><h2>七条沙沙罗线</h2><p><img src="https://picdl.sunbangyan.cn/2023/12/24/e0218fa7fbe524db8dcb0b0fecbc2aa8.jpeg"></p><p>七条沙沙罗线的主题是“亲情”，在亲情与大义面前，是选择亲情、生命，还是所谓的大义？这条线路，彰显出的是人性善恶，看到大反派的嘴脸，玩起来让人血压飙升，而看到正派角色的结局，看到善被恶所伤，让人控制不住眼泪。沙沙罗与母亲吐露真心、化解误会，刻骨铭心的刀子，由亲情来创造。</p><hr><h2>三好由比子线</h2><p><img src="https://picst.sunbangyan.cn/2023/12/24/a660997278c030095fc70d993c61fc5b.jpeg"></p><p>这条线路和前两条比起来，略显得平庸，但整体演出效果依旧不错，主题是“克服阴影”，之前的回忆、产生的阴影（不太好多剧透），整体上少了些奇幻的元素，保留了悬疑元素，整体评价不错，值得一玩（不太好剧透于是不多写）</p><hr><h1>总评</h1>总体来说，《夏空彼方》的三条线路都不错。在音乐方面，我觉得在柚子社所有作品中可以排前三；剧情完整，还是很吸引我的，不过一些设定上的说明不是特别清晰，整体不错；人物塑造上，男主的形象我觉得塑造的很成功（我愿称之为最深情的柚子男主），女主上略有欠缺。游戏的演出效果很棒，BGM插入的恰到好处，把握住了玩家的情绪变化。***玩完《夏空彼方》后，心里感到的，更多的是一种无名的空虚和对剧情的反思、以及产生的伤感。也让我更全面地认识了柚子社，柚子社≠废萌会社——至少曾经不是的。<p>对于柚子厨来说，这部作品很值得一玩，或许可以刷新一下对柚子社的认知，更全面地了解柚子社。<br>我始终怀念12月的那个盛夏之岛、和朋友们欢度假期、经历一段刻骨铭心的悲伤、浪漫的爱恋。或许，这是柚子社最后的柔情与浪漫。</p><p><img src="https://picss.sunbangyan.cn/2023/12/24/00a3b79926a5e5f3b403e8a9ecf7f1be.jpeg"><br><img src="https://picdm.sunbangyan.cn/2023/12/24/12387ab06ba0a08dc0444a3a66e3d809.jpeg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    
-    <category term="galgame" scheme="https://auroraisok.online/tags/galgame/"/>
     
   </entry>
   
