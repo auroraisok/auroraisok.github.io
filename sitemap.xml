@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://auroraisok.online/posts/cc7e9753.html</loc>
+    
+    <lastmod>2024-06-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://auroraisok.online/posts/32a9afc7.html</loc>
     
     <lastmod>2024-06-29</lastmod>
@@ -270,13 +279,6 @@
   </url>
   
   <url>
-    <loc>https://auroraisok.online/tags/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2024-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://auroraisok.online/tags/gal/</loc>
     <lastmod>2024-06-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -284,14 +286,21 @@
   </url>
   
   <url>
-    <loc>https://auroraisok.online/tags/%E7%BD%91%E7%AB%99/</loc>
+    <loc>https://auroraisok.online/tags/galgame/</loc>
     <lastmod>2024-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://auroraisok.online/tags/galgame/</loc>
+    <loc>https://auroraisok.online/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2024-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://auroraisok.online/tags/%E7%BD%91%E7%AB%99/</loc>
     <lastmod>2024-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

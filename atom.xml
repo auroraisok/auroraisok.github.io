@@ -6,7 +6,7 @@
   <link href="https://auroraisok.online/atom.xml" rel="self"/>
   
   <link href="https://auroraisok.online/"/>
-  <updated>2024-06-29T03:45:57.609Z</updated>
+  <updated>2024-06-30T10:49:55.557Z</updated>
   <id>https://auroraisok.online/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于被举报这件事</title>
+    <link href="https://auroraisok.online/posts/cc7e9753.html"/>
+    <id>https://auroraisok.online/posts/cc7e9753.html</id>
+    <published>2024-06-30T10:26:04.000Z</published>
+    <updated>2024-06-30T10:49:55.557Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近两个月来、自己的QQ、注册的网盘、b站视频、b站账号、QQ空间陆续遭到举报。之前自己做了个app，用外部网盘分享一下，一个小时后就被举报了。但我的网盘是刚注册的，只分享过自己的app，我的QQ空间也是仅好友可见。虽然我不喜欢怀疑别人、但种种迹象表明有人应该是有人恶意而为之。</p><hr>我自己的做人原则：说真话、办真事、当真人。我思考我平时的为人、也没有和人产生过纠纷矛盾、也没有在网上骂架;我认为自己是一个能听得进去批评和建议的人，也不会在网上摆架子、不会“装大佬”、摆出高高在上的姿态。</br>群友说，是不是被倒卖者盯上了?我个人与倒卖者倒没什么纠纷、也没发生过什么矛盾。没有证据前不要胡乱猜测为好，只能表明有人恶意举报我各个账号、我自己挺匪夷所思的。<hr>不知道举报者会不会寻到这个网站呢?我想表明自己的个人态度、为人处世的一些原则:</br>我这个人，是追求实干主义的，说真话不打官腔、不打谜语;做事情办真事、不糊弄人;做人追求真实和本心、不掩盖自己的是非错对，不委屈自己不做假人。我比较喜欢易中天那种很直、很敢说的性格。</br>我不否认我目前有很多不成熟、不正确的思想，不否认自身有很多错误。我也不是气量恢宏、大方的人，我承认我在接受批评时心里可能会不舒服，有时难受几天，但我不怕批评和建议、也欢迎批评和建议，类似于“良药苦口”的感觉：我不否认药苦、但更看重的是“良药”的本质。</br>我不是圣人、不是思想家、不是优秀人才，更不是大佬、也不是建政小鬼、也不是天之骄子。我对自己的定位，只是普普通通的穷学生，尽量做自己想做的事。我大一时抑郁了一年，现在想来，我就是个普普通通的人,也是个十分真实的人。</br>如果我有做得不对的地方、可以批评指教交流，我也不是圣人君子，也不是装出一种“具有欢迎批评指教的优秀品质的优秀形象”。</br>我就是个做些想做的事、说些想说的话的、随意发挥的普通学生而已。我不与人结仇、不会去否定、看轻任何人的观点和思想，主张以和为贵、不爱惹事生非，如此而已，有哪些令人不舒服、以至于要通过举报泄愤的行为，我表示抱歉，但希望能告知我。解决问题的手段不是杀死一个人，而是交流。]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="闲聊" scheme="https://auroraisok.online/tags/%E9%97%B2%E8%81%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建flarum论坛</title>
@@ -431,28 +453,6 @@
     
     
     <category term="闲聊" scheme="https://auroraisok.online/tags/%E9%97%B2%E8%81%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>零成本建站记录</title>
-    <link href="https://auroraisok.online/posts/588684b2.html"/>
-    <id>https://auroraisok.online/posts/588684b2.html</id>
-    <published>2024-06-22T01:16:49.000Z</published>
-    <updated>2024-06-22T01:36:37.135Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这篇文章用于记录一些零成本建站，无需太多的技术力，让任何人都能搭建自己的网站。</p><h1>一、零成本搭建个人网站</h1>这里的方案是，github+hexo+zeabur+netlify+vercel+cloudns实现多线程部署。我们采用hexo作为网站主体框架，奖网站托管到github上，再托管到netlify、zeabur、vercel上给网站加速。cloudns的作用是白嫖二级域名进行多线路解析、从而提高网站访问速度。比如我们将github解析到国外线路、netlify解析到移动、vercel解析到联通、zeabur解析到电信。只需要一个域名、国内外人都能访问网站。</br>可以查看B站专栏cv32725903<h1>二、零成本搭建Alist网盘</h1>原理是利用Serv00虚拟主机+白嫖的二级域名+cloudflare，推荐看这篇文章：https://mymuwu.net/?p=1156</br>关于二级域名的白嫖，国内有很多二级域名免费分发平台，只需要一个邮箱账号就行。你也可以去cloudns白嫖二级域名。</br>cloudflare的作用是加速，但是cloudflare比较不稳定、有时反而减速，github有很多项目可以找出cloudflare快速的节点，可以配合食用<h1>三、零成本搭建discuz/flarum论坛</h1>同样用Serv00虚拟主机，将从官网下载的文件传主机上就行。discuz网上有很多教程了，写写flarum。把从官网下载的文件传主机上解压后，域名绑定public目录，一步步配置就好。加速继续白嫖cloudflare。<h1>四、零成本搭建wordpress站</h1>同样用Serv00和cloudflare<h1>五、零成本搭建图床</h1>用telegraph+cloudflare+github。很多人喜欢直接把github当成图床用，其实是有风险的。因为github文件超过1GB会有人工审查，发现你把github当图床会封号。<hr><p>最终合理利用各类白嫖的网站，可以形成很不错的效果:</br><br>hexo&#x2F;wordpress网站当资源站用，Alist用于存储资源提供下载，telegraph用于给当图床，flarum&#x2F;discuz当网站的论坛</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    
-    <category term="网站" scheme="https://auroraisok.online/tags/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
