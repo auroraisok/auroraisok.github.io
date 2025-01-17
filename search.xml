@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>零成本搭建在线文档网站</title>
+      <link href="/2025/01/17/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E5%9C%A8%E7%BA%BF%E6%96%87%E6%A1%A3%E7%BD%91%E7%AB%99/"/>
+      <url>/2025/01/17/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E5%9C%A8%E7%BA%BF%E6%96%87%E6%A1%A3%E7%BD%91%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[<p>先来看一下效果：<a href="https://lilidemo.zeabur.app/#/">理理的游戏策划</a></br><br>这是我的Github仓库<a href="https://bgithub.xyz/Amatsutsumi/Unity_Design_Document">游戏策划仓库</a></br></p><hr><p>起因是寒假打算用Unity做一个ARPG的游戏demo，做之前要写文档。于是我发现了docsify这个工具，并对其进行了一些改动。</br><br>关于docsify，网上的教程有很多，推荐参考官方教程进行改动。做一些简单的工作还是不错的。在使用过程中发现一些问题，比如网站打不开，原因是jsdelivr访问起来比较慢，换一下就行了。这需要对index.html以下代码进行改动。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;//fastly.jsdelivr.net/npm/docsify@4/lib/themes/vue.css&quot;&gt;</span><br><span class="line">&lt;script src=&quot;//fastly.jsdelivr.net/npm/docsify@4&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>除了docsify，此外还有一些工具。第一个是vitepress，难度稍微有一点，但是自定义起来要比较丰富些。其次是语雀，不需要任何基础，操作起来十分方便，很多个人和团队也喜欢用。</p><hr><p>之后就是最关键的部署问题了，方案其实挺多的。我喜欢用github自带的github pages做网站，如果感觉太慢的话，搭配上zeabur、netlify、vercel、cloudflare等赛博大善人，访问速度会大幅提升，而且不需要花钱。</br><br>其次你还可以去白嫖serv00虚拟主机，我喜欢serv00最重要的是可以支持ssh远程连接，用来做wordpress站点、搭建Alist网盘很不错，而且由于机器在波兰你甚至可以搭建节点，还是很丰富的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+            <tag> docsify </tag>
+            
+            <tag> 网站搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>github上传文件</title>
+      <link href="/2025/01/17/github%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
+      <url>/2025/01/17/github%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>22年高三上网课期间，我接触了github，然而当时我没有任何技术力，一直到24年我甚至不知道怎么通过git往github上上传文件，每次上传就会报错O_o。时隔多年。我已经能熟练地往github上上传东西了，但是身边还有很多小伙伴不知道怎么往Github上上传文件，于是写下本文。</p><hr><h3>1.利用github网站直接上传文件</h3>github自带文件上传窗口，很简单，只需要拖拽或者选择文件就好，但是有限制，我记得单个文件最大不能超过100MB，一次最多上传文件数有限制，看似窗口化很方便，实则一点也不方便。<h3>2.通过ssh+git上传文件</h3>这应该是最常用的上传文件方式了。首先电脑上需要安装Git这个软件，右键git bash配置好你的账户：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email  useremail@qq.com</span><br></pre></td></tr></table></figure><p>接下来在你的github账号里新建一个仓库。有时候github.com这个域名打不开，这里我推荐用bgithub.xyz这个镜像站，也是可以的。创建好仓库后需要有一对ssh秘钥。这东西是在git bash里生成的，详细可以参考<a href="https://www.cnblogs.com/yuqiliu/p/12551258.html">别人的文章</a></br><br>另外呢，有时候我们有多个github账号（就比如我，有时要管理这个网站、有时管理萤光小站，需要频繁切换ssh），这时就需要保存好不同的ssh了。可以把ssh比作成钥匙，github比作成仓库大门，开哪扇门用哪个钥匙。</br></p><p>接下来在本地要上传到Github的文件夹执行以下命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git init //这句话是为了初始化</span><br><span class="line">git add . //这句是将全部文件都加到初始化的git目录里</span><br><span class="line">git commit -m &quot;写什么都行&quot; //给你要提交的文件写个注释</span><br><span class="line">git branch -M main //这就是切换到main分支</span><br><span class="line">git remote add origin git@github.com:改成你自己的.git // 这句是连接远程仓库</span><br><span class="line">git pull origin main --allow-unrelated-histories //这句是非必要的，有时候一个仓库多个人维护，你的版本落后了就会报错，再执行这句</span><br><span class="line">git push -u origin main //把本地项目推送到main分支</span><br></pre></td></tr></table></figure><p>若是有什么报错，就用AI搜一搜就好。想当年我只是想上传个Narcissu网页版，耗了很大的功夫再上传上去，看来我的智力如今提升了hhh</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>自学Unity的瓶颈</title>
       <link href="/2025/01/14/%E8%87%AA%E5%AD%A6Unity%E7%9A%84%E7%93%B6%E9%A2%88/"/>
       <url>/2025/01/14/%E8%87%AA%E5%AD%A6Unity%E7%9A%84%E7%93%B6%E9%A2%88/</url>
@@ -80,9 +134,9 @@
             
             <tag> Unity </tag>
             
-            <tag> 游戏开发 </tag>
-            
             <tag> 技能编辑器 </tag>
+            
+            <tag> 游戏开发 </tag>
             
         </tags>
       
@@ -215,9 +269,9 @@
             
             <tag> Unity </tag>
             
-            <tag> 连招 </tag>
-            
             <tag> 游戏开发 </tag>
+            
+            <tag> 连招 </tag>
             
         </tags>
       
@@ -244,9 +298,9 @@
             
             <tag> Unity </tag>
             
-            <tag> 游戏开发 </tag>
-            
             <tag> 技能编辑器 </tag>
+            
+            <tag> 游戏开发 </tag>
             
             <tag> 连招思路 </tag>
             
