@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C盘清理指南</title>
+      <link href="/2025/01/21/C%E7%9B%98%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/"/>
+      <url>/2025/01/21/C%E7%9B%98%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/</url>
+      
+        <content type="html"><![CDATA[<p>今天打开电脑，发现C盘剩100GB。记得去年我的C盘还有148GB，看来需要清理一下了。最终我清理了50GB，C盘变成150GB了。</p><hr><h3>一、基础清理（50GB）</h3>最基础的清理，一般不经常清理电脑的人，清理过后电脑可能多出50GB：</br>首先打开回收站，把里边东西全清理了。其次win+R调出运行，输入%temp%,Ctrl+A全选，shift+delete全部删除。</br>效果：我一只用电脑不清理的朋友在此操作后多出50GB空间。<h3>二、C盘清理软件（35GB）</h3>市面上大多C盘清理软件都挺流氓的，清理不出来什么东西、还要VIP。这里我推荐<a href = "https://bgithub.xyz/Chuyu-Team/Dism-Multi-language/releases">Dism++</a>，一款开源软件，大小只有3.33MB。打开后在“空间清理”里进行选择就好。</br>值得一提的是，其中有个选项叫“系统还原点”，这个东西是为了防止你电脑系统损坏，相当于备份，一般不建议删除（实际删除一般也没什么事，空间不够直接删），我勾选后清理掉30GB。<h3>三、大型软件清理（80+30+10+5GB）</h3>把软件装到除C盘以外的盘，这点很重要。但又一些软件我们总是不可避免地装到了C盘。而它们就是罪魁祸首。</br><b>1.Adobe全家桶</b>，电脑上装有PS、PR、AE等等软件的人要注意，Adobe软件默认缓存是在C盘，长时间不清理会越来越大。我一同学清理缓存后，电脑成功多出80GB。</br><b>2.QQ</b>QQ我都默认装D盘，但每次清理D盘QQ还能清理掉30GB，装C盘可想而知。</br><b>3.Visual Studio</b>。同样非常占内存的东西，如果电脑上有装一定要清理。</br><b>4.Unity</b>。Unity的一些缓存文件也非常占内存</br><h3>四、手动排查（未知GB）</h3>当你win+R在运行窗口输入appdata，你会发现里边的三个文件夹里，Local和Roaming占的内存很大，自己手动判断哪些需要清理哪些不需要就好。]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C盘清理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Unity自定义类</title>
       <link href="/2025/01/21/Unity%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB/"/>
       <url>/2025/01/21/Unity%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB/</url>
